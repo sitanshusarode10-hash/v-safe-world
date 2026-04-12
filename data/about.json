@@ -1,0 +1,23 @@
+{
+  "introduction": "V-Safe World Pvt Ltd is a leading provider of comprehensive Environment, Health, and Safety (EHS) solutions. We specialize in delivering world-class safety training programs, conducting thorough audits and inspections, supplying premium safety equipment, and providing expert consultancy services to organizations across industries.",
+  "vision": "To be the most trusted partner in workplace safety, creating a world where every worker returns home safely every day.",
+  "mission": "To empower organizations with cutting-edge safety training, rigorous audit protocols, quality safety equipment, and strategic consultancy that transforms workplace safety culture from compliance-driven to value-driven.",
+  "businessOverview": "With a commitment to excellence and a passion for safety, V-Safe World has established itself as a reliable partner for businesses seeking comprehensive EHS solutions. Our team of certified safety professionals brings extensive industry experience to every engagement, ensuring practical, actionable safety improvements.",
+  "stats": {
+    "clients": 50,
+    "trainings": 200,
+    "yearsExperience": 5,
+    "industries": 15
+  },
+  "director": {
+    "name": "Director Name",
+    "title": "Founder & Managing Director",
+    "bio": "A seasoned safety professional with extensive experience in the EHS domain, our Managing Director founded V-Safe World with a vision to make workplaces safer across India and beyond.",
+    "quote": "Safety is not just a policy — it's a value that must be embedded into every aspect of operations. At V-Safe World, we don't just train people; we transform safety cultures.",
+    "image": ""
+  },
+  "trustBadges": [
+    { "name": "DISH Approved", "image": "", "description": "DISH Approved First Aid Training Institute" },
+    { "name": "National Safety Council Member", "image": "", "description": "Registered Member of the National Safety Council" }
+  ]
+}

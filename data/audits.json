@@ -1,0 +1,7 @@
+[
+  { "id": "ehs-audits", "title": "EHS Audits", "icon": "clipboard-check", "shortDescription": "Comprehensive Environment, Health & Safety audits to evaluate workplace compliance, identify risks, and recommend corrective actions aligned with regulatory standards.", "fullDescription": "", "image": "" },
+  { "id": "fire-safety-audits", "title": "Fire Safety Audits", "icon": "flame", "shortDescription": "Thorough fire safety assessments covering fire detection systems, suppression equipment, evacuation plans, and compliance with fire safety regulations.", "fullDescription": "", "image": "" },
+  { "id": "industrial-audits", "title": "Industrial Audits", "icon": "factory", "shortDescription": "In-depth industrial safety audits evaluating machinery safety, process hazards, workplace conditions, and occupational health compliance.", "fullDescription": "", "image": "" },
+  { "id": "food-inspection", "title": "Food Inspection Audits", "icon": "utensils", "shortDescription": "Food safety inspection services covering hygiene standards, FSSAI compliance, storage conditions, and contamination prevention protocols.", "fullDescription": "", "image": "" },
+  { "id": "quality-environment", "title": "Quality / Environment Audits", "icon": "leaf", "shortDescription": "Quality management and environmental compliance audits ensuring adherence to ISO standards and environmental protection regulations.", "fullDescription": "", "image": "" }
+]

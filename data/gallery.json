@@ -1,0 +1,6 @@
+[
+  { "id": 1, "type": "image", "category": "training", "src": "", "alt": "Fire safety training session", "caption": "Fire Safety Training Program" },
+  { "id": 2, "type": "image", "category": "training", "src": "", "alt": "First aid CPR training", "caption": "First Aid & CPR Training" },
+  { "id": 3, "type": "image", "category": "events", "src": "", "alt": "Safety awareness event", "caption": "Safety Awareness Campaign" },
+  { "id": 4, "type": "image", "category": "equipment", "src": "", "alt": "Safety equipment display", "caption": "Safety Equipment Showcase" }
+]

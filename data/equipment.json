@@ -1,0 +1,14 @@
+[
+  { "id": "safety-helmet", "name": "Industrial Safety Helmets", "category": "ppe", "image": "", "description": "High-quality industrial safety helmets with shock absorption, adjustable headband, and ventilation for maximum protection and comfort." },
+  { "id": "safety-goggles", "name": "Safety Goggles & Eyewear", "category": "ppe", "image": "", "description": "Impact-resistant safety goggles and eyewear providing protection against dust, debris, chemicals, and UV radiation." },
+  { "id": "ear-protection", "name": "Ear Protection", "category": "ppe", "image": "", "description": "Noise-reducing earplugs and earmuffs designed for high-noise industrial environments to prevent hearing damage." },
+  { "id": "safety-vest", "name": "High-Visibility Safety Vests", "category": "ppe", "image": "", "description": "Reflective high-visibility vests meeting safety standards for construction sites, warehouses, and road work." },
+  { "id": "nitrile-gloves", "name": "Nitrile Gloves", "category": "gloves", "image": "", "description": "Chemical-resistant nitrile gloves suitable for laboratory, industrial, and medical applications." },
+  { "id": "leather-gloves", "name": "Leather Work Gloves", "category": "gloves", "image": "", "description": "Premium leather work gloves providing heat resistance, cut protection, and superior grip for heavy-duty tasks." },
+  { "id": "rubber-gloves", "name": "Insulated Rubber Gloves", "category": "gloves", "image": "", "description": "Electrically insulated rubber gloves for safe handling of electrical equipment and live wires." },
+  { "id": "steel-toe-boots", "name": "Steel Toe Safety Boots", "category": "safety-shoes", "image": "", "description": "Industrial-grade steel toe boots with slip-resistant soles, puncture protection, and waterproof construction." },
+  { "id": "anti-static-shoes", "name": "Anti-Static Safety Shoes", "category": "safety-shoes", "image": "", "description": "Anti-static footwear for electronics manufacturing and environments requiring electrostatic discharge protection." },
+  { "id": "fire-extinguisher", "name": "Fire Extinguishers", "category": "other", "image": "", "description": "Multi-purpose fire extinguishers including ABC dry powder, CO2, and foam types for various fire hazards." },
+  { "id": "first-aid-kit", "name": "First Aid Kits", "category": "other", "image": "", "description": "Comprehensive first aid kits stocked with essential medical supplies for workplace emergency response." },
+  { "id": "safety-harness", "name": "Fall Protection Harness", "category": "other", "image": "", "description": "Full-body fall protection harnesses with shock-absorbing lanyards for working at heights safely." }
+]
