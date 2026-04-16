@@ -431,49 +431,60 @@
   margin: 0 auto;
 }
 
-.trainingsTop {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
-  margin-bottom: var(--space-xl);
+.trainingsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-3xl);
+  margin-bottom: var(--space-3xl);
 }
 
-.trainingsText {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+.trainingsHeaderLeft {
+  flex: 1;
+}
+
+.trainingsTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-lg);
 }
 
 .trainingsHeading {
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--color-primary);
-  margin-bottom: var(--space-md);
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-}
-
-.trainingsSubheading {
   font-family: var(--font-heading);
-  font-size: 2.4rem;
+  font-size: 3rem;
   font-weight: 800;
-  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1.2;
-  margin-bottom: var(--space-lg);
+  color: var(--color-gray-900);
+  line-height: 1.1;
   letter-spacing: -0.02em;
 }
 
+.trainingsHeading span {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.trainingsHeaderRight {
+  flex: 0 0 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
 .trainingsDesc {
-  color: var(--color-gray-700);
+  color: var(--color-gray-600);
   line-height: 1.7;
-  margin-bottom: var(--space-xl);
   font-size: 0.95rem;
 }
 
@@ -492,6 +503,7 @@
   align-items: center;
   gap: 8px;
   z-index: 1;
+  font-size: 0.9rem;
 }
 
 .enquireBtn::before {
@@ -516,97 +528,139 @@
   transform: scaleX(1);
 }
 
-.trainingsCardsTop {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
+.enquireBtn:hover svg {
+  transform: translateX(3px);
 }
 
-.trainingsCardsBottom {
+.enquireBtn svg {
+  transition: transform 0.3s ease;
+}
+
+/* Training Cards - Bento Grid */
+.trainingsGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-xl);
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 280px;
+  gap: var(--space-lg);
 }
 
 .trainingCard {
   position: relative;
-  border-radius: 200px;
+  border-radius: var(--radius-xl);
   overflow: hidden;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-color: var(--color-gray-200);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  min-height: 380px;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
 }
 
-.trainingsCardsTop .trainingCard {
-  min-height: 480px;
-  height: 100%;
+.trainingCardLarge {
+  grid-row: span 2;
 }
 
-.trainingsCardsBottom .trainingCard {
-  min-height: 350px;
+.trainingCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 30%,
+    rgba(3, 58, 39, 0.85) 100%
+  );
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+
+.trainingCard:hover::before {
+  background: linear-gradient(
+    180deg,
+    rgba(3, 58, 39, 0.2) 0%,
+    rgba(3, 58, 39, 0.6) 40%,
+    rgba(3, 58, 39, 0.92) 100%
+  );
 }
 
 .trainingCard:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.14);
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.18);
 }
 
 .trainingOverlay {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  padding: var(--space-2xl) var(--space-xl) 50px;
-  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,0) 100%);
+  inset: 0;
+  padding: var(--space-xl);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: flex-end;
-  text-align: center;
+  z-index: 2;
   color: var(--color-white);
+}
+
+.trainingNum {
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.12);
+  line-height: 1;
   transition: all 0.4s ease;
+}
+
+.trainingCard:hover .trainingNum {
+  color: rgba(255,255,255,0.25);
+  transform: scale(1.1);
+}
+
+.trainingInfo {
+  transform: translateY(20px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.trainingCard:hover .trainingInfo {
+  transform: translateY(0);
 }
 
 .trainingOverlay h3 {
   font-family: var(--font-heading);
-  font-size: 1.2rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  margin-bottom: 0;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-  letter-spacing: 0.5px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 4px;
   color: #ffffff;
-  transform: translateY(18px);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 0.01em;
 }
 
-.trainingCard:hover .trainingOverlay h3 {
+.trainingOverlay p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.5;
+  margin-bottom: var(--space-md);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.05s;
+}
+
+.trainingCard:hover .trainingOverlay p {
+  opacity: 1;
   transform: translateY(0);
 }
 
 .trainingReadMore {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #ffffff;
-  padding: 9px 22px;
-  border-radius: 30px;
-  font-size: 0.8rem;
-  font-weight: 700;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  text-decoration: none;
+  gap: 6px;
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.85rem;
   opacity: 0;
-  transform: translateY(18px);
-  margin-top: 14px;
+  transform: translateY(10px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
 }
 
 .trainingCard:hover .trainingReadMore {
@@ -614,17 +668,11 @@
   transform: translateY(0);
 }
 
-.trainingReadMore:hover {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
 .trainingReadMore svg {
   transition: transform 0.3s ease;
 }
 
-.trainingReadMore:hover svg {
+.trainingCard:hover .trainingReadMore svg {
   transform: translateX(4px);
 }
 
@@ -866,10 +914,226 @@
   min-height: 400px;
 }
 
+/* Train the Trainer Section */
+.trainTheTrainer {
+  position: relative;
+  min-height: 680px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.tttBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  transform: scale(1.02);
+}
+
+.tttOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(3, 58, 39, 0.92) 0%,
+    rgba(6, 78, 53, 0.85) 40%,
+    rgba(10, 104, 71, 0.75) 100%
+  );
+  z-index: 1;
+}
+
+.tttInner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-4xl) var(--space-xl);
+  width: 100%;
+}
+
+.tttContent {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.tttSubLabel {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-style: italic;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: var(--space-sm);
+  letter-spacing: 0.08em;
+}
+
+.tttTitle {
+  font-family: var(--font-heading);
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: var(--color-white);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  margin-bottom: var(--space-sm);
+}
+
+.tttHeading {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+  margin-bottom: var(--space-md);
+}
+
+.tttDesc {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Stats Bar */
+.tttStats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-3xl);
+  margin-bottom: var(--space-3xl);
+  padding: var(--space-xl) 0;
+}
+
+.tttStat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.tttStatNum {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--color-white);
+  line-height: 1;
+}
+
+.tttStatLabel {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.tttStatDivider {
+  width: 1px;
+  height: 50px;
+  background: rgba(255,255,255,0.2);
+}
+
+/* TTT Cards */
+.tttCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.tttCard {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl) var(--space-xl);
+  color: var(--color-white);
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.tttCard:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+  border-color: rgba(255,255,255,0.25);
+}
+
+.tttCardNum {
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.06);
+  line-height: 1;
+  transition: all 0.4s ease;
+}
+
+.tttCard:hover .tttCardNum {
+  color: rgba(255,255,255,0.12);
+}
+
+.tttCardIcon {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-lg);
+  color: var(--color-accent);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+}
+
+.tttCard:hover .tttCardIcon {
+  background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.1) 100%);
+  transform: scale(1.05);
+}
+
+.tttCard h4 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  color: var(--color-white);
+}
+
+.tttCard p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: var(--space-lg);
+}
+
+.tttCardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.tttCardLink:hover {
+  gap: 10px;
+  color: var(--color-white);
+}
+
 /* Client Logos */
 .clientLogos {
   padding: var(--space-3xl) 0;
   overflow: hidden;
+  background: var(--color-off-white);
 }
 
 .clientLogosTitle {
@@ -884,15 +1148,19 @@
 .logosTrack {
   display: flex;
   gap: var(--space-3xl);
-  animation: marquee 20s linear infinite;
+  animation: marquee 25s linear infinite;
   width: max-content;
 }
 
+.logosTrack:hover {
+  animation-play-state: paused;
+}
+
 .logoItem {
-  width: 120px;
-  height: 60px;
-  background: var(--color-gray-100);
-  border-radius: var(--radius-md);
+  width: 140px;
+  height: 65px;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -900,6 +1168,20 @@
   font-weight: 600;
   font-size: 0.75rem;
   flex-shrink: 0;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: 1px solid var(--color-gray-200);
+  transition: all 0.3s ease;
+}
+
+.logoItem:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  border-color: var(--color-primary-light);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* Responsive */
@@ -909,6 +1191,15 @@
   .testimonialGrid { grid-template-columns: repeat(2, 1fr); }
   .blogGrid { grid-template-columns: repeat(2, 1fr); }
   .heroBadgesInner { gap: var(--space-lg); }
+  .trainingsHeader { flex-direction: column; align-items: flex-start; gap: var(--space-xl); }
+  .trainingsHeaderRight { flex: none; width: 100%; }
+  .trainingsHeading { font-size: 2.4rem; }
+  .trainingsGrid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 240px; }
+  .trainingCardLarge { grid-row: span 2; }
+  .tttTitle { font-size: 2.4rem; }
+  .tttHeading { font-size: 1.2rem; }
+  .tttStats { gap: var(--space-2xl); }
+  .tttStatNum { font-size: 2rem; }
 }
 
 @media (max-width: 768px) {
@@ -927,4 +1218,14 @@
   .formRow { grid-template-columns: 1fr; }
   .trustBarInner { gap: var(--space-xl); }
   .statNumber { font-size: 1.8rem; }
+  .trainingsGrid { grid-template-columns: 1fr; grid-auto-rows: 220px; }
+  .trainingCardLarge { grid-row: span 1; }
+  .trainingsHeading { font-size: 2rem; }
+  .trainTheTrainer { min-height: auto; }
+  .tttInner { padding: var(--space-3xl) var(--space-xl); }
+  .tttTitle { font-size: 1.8rem; }
+  .tttHeading { font-size: 1.1rem; }
+  .tttStats { flex-direction: column; gap: var(--space-lg); }
+  .tttStatDivider { width: 40px; height: 1px; }
+  .tttCards { grid-template-columns: 1fr; }
 }

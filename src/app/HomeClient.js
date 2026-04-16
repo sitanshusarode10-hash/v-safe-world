@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Shield, Award, Users, CheckCircle, ChevronRight, Quote, Calendar, ArrowRight } from 'lucide-react';
+import { Shield, Award, Users, CheckCircle, ChevronRight, Quote, Calendar, ArrowRight, GraduationCap } from 'lucide-react';
 import styles from './page.module.css';
 import heroBgImage from '@/assets/images/Hero Background.jpeg';
 import healthWellnessImg from '@/assets/images/health and well-being.webp';
@@ -86,73 +86,140 @@ export default function HomeClient({ testimonials, blogs }) {
 
       {/* Trainings Section */}
       <section className={`${styles.trainingsSection} reveal`}>
-        <div className={styles.trainingsTop}>
-          <div className={styles.trainingsText}>
-            <h2 className={styles.trainingsHeading}>SAFER WORKPLACE</h2>
-            <h3 className={styles.trainingsSubheading}>Keeping People safe, injury-free,<br />and productive.</h3>
+        <div className={styles.trainingsHeader}>
+          <div className={styles.trainingsHeaderLeft}>
+            <span className={styles.trainingsTag}><Shield size={14} /> Our Expertise</span>
+            <h2 className={styles.trainingsHeading}>What We <span>Offer</span></h2>
+          </div>
+          <div className={styles.trainingsHeaderRight}>
             <p className={styles.trainingsDesc}>
-              V-Safe World is a one-stop shop for all health, safety, and disaster management-related products, services, and solutions. Providing solutions globally for the last 20 years that match the pace of this era that is innovative, cutting-edge, and reliable, we are enveloping the complete suite of Health and Safety training and products for all domains to prevent accidents, incidents, or injuries. Protecting you, your loved ones, and your assets are the prime drivers of our business.
+              V-Safe World is your one-stop destination for health, safety, and disaster management solutions — delivering innovative, cutting-edge services for over 20 years.
             </p>
             <Link href="/contact" className={styles.enquireBtn}>
-              Enquire Now
+              Enquire Now <ArrowRight size={16} />
             </Link>
-          </div>
-          <div className={styles.trainingsCardsTop}>
-            <div className={styles.trainingCard} style={{ backgroundImage: `url("${healthWellnessImg.src}")` }}>
-              <div className={styles.trainingOverlay}>
-                <h3>HEALTH &amp; WELLNESS</h3>
-                <Link href="/trainings" className={styles.trainingReadMore}>
-                  READ MORE <ChevronRight size={14} />
-                </Link>
-              </div>
-            </div>
-            <div className={styles.trainingCard} style={{ backgroundImage: `url("${industrialSafetyImg.src}")` }}>
-              <div className={styles.trainingOverlay}>
-                <h3>INDUSTRIAL SAFETY</h3>
-                <Link href="/trainings" className={styles.trainingReadMore}>
-                  READ MORE <ChevronRight size={14} />
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
 
-        <div className={styles.trainingsCardsBottom}>
-          <div className={styles.trainingCard} style={{ backgroundImage: `url("${defensiveDrivingImg.src}")` }}>
+        <div className={styles.trainingsGrid}>
+          <Link href="/trainings" className={`${styles.trainingCard} ${styles.trainingCardLarge}`} style={{ backgroundImage: `url("${healthWellnessImg.src}")` }}>
             <div className={styles.trainingOverlay}>
-              <h3>DEFENSIVE DRIVING</h3>
-              <Link href="/trainings" className={styles.trainingReadMore}>
-                READ MORE <ChevronRight size={14} />
-              </Link>
+              <span className={styles.trainingNum}>01</span>
+              <div className={styles.trainingInfo}>
+                <h3>Health &amp; Wellness</h3>
+                <p>CPR, First Aid, POSH, Mental Health, Ergonomics &amp; more</p>
+                <span className={styles.trainingReadMore}>Explore <ArrowRight size={14} /></span>
+              </div>
+            </div>
+          </Link>
+          <Link href="/trainings" className={styles.trainingCard} style={{ backgroundImage: `url("${fireSafetyImg.src}")` }}>
+            <div className={styles.trainingOverlay}>
+              <span className={styles.trainingNum}>02</span>
+              <div className={styles.trainingInfo}>
+                <h3>Fire Safety</h3>
+                <p>Extinguisher, Fire Fighting, Evacuation Drills</p>
+                <span className={styles.trainingReadMore}>Explore <ArrowRight size={14} /></span>
+              </div>
+            </div>
+          </Link>
+          <Link href="/trainings" className={styles.trainingCard} style={{ backgroundImage: `url("${defensiveDrivingImg.src}")` }}>
+            <div className={styles.trainingOverlay}>
+              <span className={styles.trainingNum}>03</span>
+              <div className={styles.trainingInfo}>
+                <h3>Defensive Driving</h3>
+                <p>Two Wheeler, LMV, HMV, Simulator Training</p>
+                <span className={styles.trainingReadMore}>Explore <ArrowRight size={14} /></span>
+              </div>
+            </div>
+          </Link>
+          <Link href="/trainings" className={styles.trainingCard} style={{ backgroundImage: `url("${industrialSafetyImg.src}")` }}>
+            <div className={styles.trainingOverlay}>
+              <span className={styles.trainingNum}>04</span>
+              <div className={styles.trainingInfo}>
+                <h3>Industrial Safety</h3>
+                <p>BBS, Work At Height, LOTO, Chemical Safety</p>
+                <span className={styles.trainingReadMore}>Explore <ArrowRight size={14} /></span>
+              </div>
+            </div>
+          </Link>
+          <Link href="/audits" className={styles.trainingCard} style={{ backgroundImage: `url("${auditsImg.src}")` }}>
+            <div className={styles.trainingOverlay}>
+              <span className={styles.trainingNum}>05</span>
+              <div className={styles.trainingInfo}>
+                <h3>Audits &amp; Inspection</h3>
+                <p>Compliance audits, safety inspections &amp; gap analysis</p>
+                <span className={styles.trainingReadMore}>Explore <ArrowRight size={14} /></span>
+              </div>
+            </div>
+          </Link>
+          <Link href="/equipment" className={`${styles.trainingCard} ${styles.trainingCardLarge}`} style={{ backgroundImage: `url("https://images.unsplash.com/photo-1544485547-759b66236df7?auto=format&fit=crop&q=80&w=800&h=500")` }}>
+            <div className={styles.trainingOverlay}>
+              <span className={styles.trainingNum}>06</span>
+              <div className={styles.trainingInfo}>
+                <h3>Safety Equipment (PPE)</h3>
+                <p>Premium personal protective equipment for every industry</p>
+                <span className={styles.trainingReadMore}>Explore <ArrowRight size={14} /></span>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+
+      {/* Train the Trainer Section */}
+      <section className={styles.trainTheTrainer}>
+        <div className={styles.tttBg} style={{ backgroundImage: `url("/train-the-trainer-bg.png")` }} />
+        <div className={styles.tttOverlay} />
+        <div className={styles.tttInner}>
+          <div className={styles.tttContent}>
+            <span className={styles.tttSubLabel}>We Bring to You</span>
+            <h2 className={styles.tttTitle}>&ldquo;TRAIN THE TRAINER&rdquo;</h2>
+            <h3 className={styles.tttHeading}>Get Your Experts Future Ready</h3>
+            <p className={styles.tttDesc}>Empower your safety leaders with advanced certification programs designed to multiply your organization&apos;s safety capabilities.</p>
+          </div>
+
+          <div className={styles.tttStats}>
+            <div className={styles.tttStat}>
+              <span className={styles.tttStatNum}>500+</span>
+              <span className={styles.tttStatLabel}>Trainers Certified</span>
+            </div>
+            <div className={styles.tttStatDivider} />
+            <div className={styles.tttStat}>
+              <span className={styles.tttStatNum}>50+</span>
+              <span className={styles.tttStatLabel}>Corporate Clients</span>
+            </div>
+            <div className={styles.tttStatDivider} />
+            <div className={styles.tttStat}>
+              <span className={styles.tttStatNum}>20+</span>
+              <span className={styles.tttStatLabel}>Years Experience</span>
             </div>
           </div>
-          <div className={styles.trainingCard} style={{ backgroundImage: `url("${fireSafetyImg.src}")` }}>
-            <div className={styles.trainingOverlay}>
-              <h3>FIRE SAFETY</h3>
-              <Link href="/trainings" className={styles.trainingReadMore}>
-                READ MORE <ChevronRight size={14} />
-              </Link>
+
+          <div className={styles.tttCards}>
+            <div className={styles.tttCard}>
+              <div className={styles.tttCardNum}>01</div>
+              <div className={styles.tttCardIcon}><GraduationCap size={24} /></div>
+              <h4>Professional Trainings</h4>
+              <p>2-3 days of intensive classroom trainings and practical assessments by certified expert trainers.</p>
+              <Link href="/contact" className={styles.tttCardLink}>Learn More <ArrowRight size={14} /></Link>
             </div>
-          </div>
-          <div className={styles.trainingCard} style={{ backgroundImage: `url("${auditsImg.src}")` }}>
-            <div className={styles.trainingOverlay}>
-              <h3>AUDITS &amp; INSPECTION</h3>
-              <Link href="/audits" className={styles.trainingReadMore}>
-                READ MORE <ChevronRight size={14} />
-              </Link>
+            <div className={styles.tttCard}>
+              <div className={styles.tttCardNum}>02</div>
+              <div className={styles.tttCardIcon}><Users size={24} /></div>
+              <h4>Who is it for</h4>
+              <p>Managers, Trainers, and safety professionals looking to sharpen their expertise and lead the way.</p>
+              <Link href="/contact" className={styles.tttCardLink}>Learn More <ArrowRight size={14} /></Link>
             </div>
-          </div>
-          <div className={styles.trainingCard} style={{ backgroundImage: `url("https://images.unsplash.com/photo-1544485547-759b66236df7?auto=format&fit=crop&q=80&w=600&h=400")` }}>
-            <div className={styles.trainingOverlay}>
-              <h3>PPE</h3>
-              <Link href="/equipment" className={styles.trainingReadMore}>
-                READ MORE <ChevronRight size={14} />
-              </Link>
+            <div className={styles.tttCard}>
+              <div className={styles.tttCardNum}>03</div>
+              <div className={styles.tttCardIcon}><Award size={24} /></div>
+              <h4>Personal Toolkit</h4>
+              <p>Personal assessment sheets, comprehensive Trainers kit, certification, and much more included.</p>
+              <Link href="/contact" className={styles.tttCardLink}>Learn More <ArrowRight size={14} /></Link>
             </div>
           </div>
         </div>
       </section>
-
 
       {/* Client Logos */}
       <section className={styles.clientLogos}>
@@ -160,9 +227,37 @@ export default function HomeClient({ testimonials, blogs }) {
           <h2>Our Prestigious Clients</h2>
         </div>
         <div className={styles.logosTrack}>
-          {[...Array(12)].map((_, i) => (
+          {[
+            { name: 'Tata Steel', logo: 'https://logo.clearbit.com/tatasteel.com' },
+            { name: 'Reliance', logo: 'https://logo.clearbit.com/ril.com' },
+            { name: 'Adani', logo: 'https://logo.clearbit.com/adani.com' },
+            { name: 'Larsen & Toubro', logo: 'https://logo.clearbit.com/larsentoubro.com' },
+            { name: 'Mahindra', logo: 'https://logo.clearbit.com/mahindra.com' },
+            { name: 'Godrej', logo: 'https://logo.clearbit.com/godrej.com' },
+            { name: 'Coca-Cola', logo: '/clients/cocacola.svg' },
+            { name: 'ITC', logo: '/clients/itc.svg' },
+            { name: 'Wipro', logo: 'https://logo.clearbit.com/wipro.com' },
+            { name: 'Bajaj', logo: 'https://logo.clearbit.com/bajaj.com' },
+            { name: 'Tata Steel', logo: 'https://logo.clearbit.com/tatasteel.com' },
+            { name: 'Reliance', logo: 'https://logo.clearbit.com/ril.com' },
+            { name: 'Adani', logo: 'https://logo.clearbit.com/adani.com' },
+            { name: 'Larsen & Toubro', logo: 'https://logo.clearbit.com/larsentoubro.com' },
+            { name: 'Mahindra', logo: 'https://logo.clearbit.com/mahindra.com' },
+            { name: 'Godrej', logo: 'https://logo.clearbit.com/godrej.com' },
+            { name: 'Coca-Cola', logo: '/clients/cocacola.svg' },
+            { name: 'ITC', logo: '/clients/itc.svg' },
+            { name: 'Wipro', logo: 'https://logo.clearbit.com/wipro.com' },
+            { name: 'Bajaj', logo: 'https://logo.clearbit.com/bajaj.com' },
+          ].map((client, i) => (
             <div key={i} className={styles.logoItem}>
-              <img src={`https://placehold.co/150x60/f8f9fa/a0aec0?text=Logo+${(i % 6) + 1}`} alt={`Client ${(i % 6) + 1}`} style={{ borderRadius: '8px' }} />
+              <img
+                src={client.logo}
+                alt={client.name}
+                style={{ maxWidth: '100px', maxHeight: '45px', objectFit: 'contain', filter: 'grayscale(100%) opacity(0.7)', transition: 'filter 0.3s ease' }}
+                onMouseOver={(e) => e.currentTarget.style.filter = 'grayscale(0%) opacity(1)'}
+                onMouseOut={(e) => e.currentTarget.style.filter = 'grayscale(100%) opacity(0.7)'}
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+              />
             </div>
           ))}
         </div>
